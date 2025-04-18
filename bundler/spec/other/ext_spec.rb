@@ -10,7 +10,7 @@ RSpec.describe "Gem::Specification#match_platform" do
     it "matches when platform is a string" do
       lazy_spec = Bundler::LazySpecification.new("lol", "1.0", "universal-mingw32")
       expect(lazy_spec.match_platform(pl("x86-mingw32"))).to eq(true)
-      expect(lazy_spec.match_platform(pl("x64-mingw32"))).to eq(true)
+      expect(lazy_spec.match_platform(pl("x64-mingw-ucrt"))).to eq(true)
     end
   end
 end
@@ -37,10 +37,6 @@ RSpec.describe "Bundler::GemHelpers#generic" do
   it "converts 32-bit mingw platform variants into universal-mingw" do
     expect(generic(pl("i386-mingw32"))).to eq(pl("universal-mingw"))
     expect(generic(pl("x86-mingw32"))).to eq(pl("universal-mingw"))
-  end
-
-  it "converts 64-bit mingw platform variants into universal-mingw" do
-    expect(generic(pl("x64-mingw32"))).to eq(pl("universal-mingw"))
   end
 
   it "converts x64 mingw UCRT platform variants into universal-mingw" do

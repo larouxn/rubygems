@@ -1257,11 +1257,6 @@ RSpec.describe "bundle lock" do
       end
 
       build_gem "raygun-apm", "1.0.78" do |s|
-        s.platform = "x64-mingw32"
-        s.required_ruby_version = "< #{next_ruby_minor}.dev"
-      end
-
-      build_gem "raygun-apm", "1.0.78" do |s|
         s.platform = "x64-mingw-ucrt"
         s.required_ruby_version = "< #{next_ruby_minor}.dev"
       end
@@ -1393,21 +1388,11 @@ RSpec.describe "bundle lock" do
       build_gem "unf_ext", "0.0.8.2"
 
       build_gem "unf_ext", "0.0.8.2" do |s|
-        s.required_ruby_version = [">= 2.4", "< #{previous_ruby_minor}"]
-        s.platform = "x64-mingw32"
-      end
-
-      build_gem "unf_ext", "0.0.8.2" do |s|
         s.required_ruby_version = [">= #{previous_ruby_minor}", "< #{current_ruby_minor}"]
         s.platform = "x64-mingw-ucrt"
       end
 
       build_gem "google-protobuf", "3.21.12"
-
-      build_gem "google-protobuf", "3.21.12" do |s|
-        s.required_ruby_version = [">= 2.5", "< #{previous_ruby_minor}"]
-        s.platform = "x64-mingw32"
-      end
 
       build_gem "google-protobuf", "3.21.12" do |s|
         s.required_ruby_version = [">= #{previous_ruby_minor}", "< #{current_ruby_minor}"]
@@ -1431,7 +1416,6 @@ RSpec.describe "bundle lock" do
 
       PLATFORMS
         x64-mingw-ucrt
-        x64-mingw32
 
       DEPENDENCIES
         google-protobuf

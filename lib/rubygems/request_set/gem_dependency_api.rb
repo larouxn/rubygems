@@ -54,7 +54,7 @@ class Gem::RequestSet::GemDependencyAPI
   mswin     = Gem::Platform.new "x86-mswin32"
   mswin64   = Gem::Platform.new "x64-mswin64"
   x86_mingw = Gem::Platform.new "x86-mingw32"
-  x64_mingw = Gem::Platform.new "x64-mingw32"
+  x64_mingw = Gem::Platform.new "x64-mingw-ucrt"
 
   PLATFORM_MAP = { # :nodoc:
     jruby: Gem::Platform::RUBY,
